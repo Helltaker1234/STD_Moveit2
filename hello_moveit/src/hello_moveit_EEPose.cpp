@@ -54,7 +54,8 @@ int main(int argc, char * argv[])
   // {move_group_interface} <--Action--> {move_group}
   //
   // 두번째 인수: "manipulator" - robot description 에 정의되어 있는 the group of joints. 
-  auto move_group_interface = MoveGroupInterface(node, "panda_arm"/*"manipulator"*/);
+  // auto move_group_interface = MoveGroupInterface(node, "panda_arm"/*"manipulator"*/);
+  auto move_group_interface = MoveGroupInterface(node, "areum2_arm_l"/*"manipulator"*/);
 
 
 

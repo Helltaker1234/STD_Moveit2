@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20260311-1332-Experimental"
+	Name="junha-950XCJ-951XCJ-950XCR"
+	Generator="ctest-3.22.1"
+	CompilerName="/usr/bin/g++"
+	CompilerVersion="11.4.0"
+	OSName="Linux"
+	Hostname="junha-950XCJ-951XCJ-950XCR"
+	OSRelease="6.8.0-101-generic"
+	OSVersion="#101~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 11 13:19:54 UTC "
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="142"
+	ProcessorCacheSize="8192"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="17164"
+	TotalPhysicalMemory="15802"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2178.87"
+	>
+	<Testing>
+		<StartDateTime>Mar 11 22:32 KST</StartDateTime>
+		<StartTestTime>1773235931</StartTestTime>
+		<TestList/>
+		<EndDateTime>Mar 11 22:32 KST</EndDateTime>
+		<EndTestTime>1773235931</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
