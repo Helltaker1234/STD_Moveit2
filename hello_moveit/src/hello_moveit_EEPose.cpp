@@ -58,52 +58,10 @@ int main(int argc, char * argv[])
   auto move_group_interface = MoveGroupInterface(node, "areum2_arm_l"/*"manipulator"*/);
 
 
-
-/* junha : start state 도 지정 할 수 있지 않을까?
-  
-      // 현재 로봇의 상태 정보(로봇의 모든 관절 각도 정보를 담고 있는 객체)를 가져옴 (복사본 생성) 
-      moveit::core::RobotStatePtr current_state = move_group_interface.getCurrentState();
-      
-      // 현재 매니퓰레이터의 joint model group 을 불러옴
-      std::vector<double> joint_group_positions;
-      const moveit::core::JointModelGroup* joint_model_group = move_group_interface.getCurrentState()->getJointModelGroup("panda_arm");
-
-      // current_state 가 getCurrentState() 함수의 출력값 객체로 초기화 되므로,
-      // joint_group_positions 에는 현재 Joint 값들이 담길것이다.
-      //
-      // [참고] values(i) = position_[il[i]]; 이 부분!
-      //
-      //   void RobotState::copyJointGroupPositions(const JointModelGroup* group, Eigen::VectorXd& values) const
-      //   {
-      //     const std::vector<int>& il = group->getVariableIndexList();
-      //     values.resize(il.size());
-      //     for (std::size_t i = 0; i < il.size(); ++i)
-      //       values(i) = position_[il[i]];
-      //   }
-
-
-      current_state->copyJointGroupPositions(joint_model_group, joint_group_positions);
-
-
-
-      // junha: 모든 관절을 0 rad 으로 변경 
-      for(uint16_t i = 0; i < joint_model_group->getVariableCount(); i++){
-        joint_group_positions[i] = 0; 
-      }
-
-      // joint_model_group 에 joint_group_positions 를 대입
-      current_state->setJointGroupPositions(joint_model_group, joint_group_positions);
-
-      // 3. 수정된 가상의 상태를 '시작 지점'으로 설정합니다.
-      move_group_interface.setStartState(*current_state);
-
-      // 4. 이제 목표를 설정하고 계획(Plan)하면, 
-      // 로봇이 현재 위치가 아니라 위에서 설정한 가상의 위치에서 출발하는 경로를 짭니다.
-      // move_group_interface.setPoseTarget(target_pose);
-      // move_group_interface.plan(my_plan);
-
-*/
-
+  // Vel, Acc 스케일 지정
+  move_group_interface.setMaxVelocityScalingFactor(0.9);
+  move_group_interface.setMaxAccelerationScalingFactor(0);
+  // move_group_interface.setPlannerId()
 
 
   // [Set a target Pose]
