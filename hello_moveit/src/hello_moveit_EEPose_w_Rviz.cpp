@@ -44,7 +44,7 @@ int main(int argc, char * argv[])
 
   using moveit::planning_interface::MoveGroupInterface;
 
-  auto move_group_interface = MoveGroupInterface(node, "panda_arm"/*"manipulator"*/);
+  auto move_group_interface = MoveGroupInterface(node, "areum2_arm_l"/*"manipulator"*/);
 
 
 
@@ -103,7 +103,7 @@ int main(int argc, char * argv[])
 
   // - tool path of a trajectory 를 그려줌.
   auto const draw_trajectory_tool_path = 
-  [&moveit_visual_tools, jmg = move_group_interface.getRobotModel()->getJointModelGroup("panda_arm")]
+  [&moveit_visual_tools, jmg = move_group_interface.getRobotModel()->getJointModelGroup("areum2_arm_l")]
   (auto const trajectory) 
   {
     moveit_visual_tools.publishTrajectoryLine(trajectory, jmg);
@@ -116,9 +116,9 @@ int main(int argc, char * argv[])
   {
     geometry_msgs::msg::Pose msg;
     msg.orientation.w = 1.0;
-    msg.position.x = 0.28;
-    msg.position.y = -0.2;
-    msg.position.z = 0.5;
+    msg.position.x = 0.2;
+    msg.position.y = 0.2;
+    msg.position.z = 0.4;
     return msg;
   }
   ();
